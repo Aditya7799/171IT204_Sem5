@@ -2,20 +2,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void serial_pi(long steps)
-{
-    long i=0;
-    double step=1.0/(double)steps;
-    double x;
-    long double pi,sum=0.0;
-    for(i=0;i<steps;i++)
-    {
-        x=(0.5+i)*step;
-        sum=sum+4.0/(1.0+x*x);
-    }
-    pi=step*sum;
-    printf("%Lf\n",pi);
-}
 
 
 
