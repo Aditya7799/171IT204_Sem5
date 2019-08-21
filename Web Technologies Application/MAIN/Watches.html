@@ -1,20 +1,39 @@
-<!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Surathkal</title>
-	<link rel="stylesheet" type="text/css" href="design_main.css">
+<title>Surathkal</title>
+<link rel="stylesheet" type="text/css" href="css/design_main.css">
+<script src="js/login.js"></script>
 </head>
 <body class="main">
+	<script src="js/login.js"></script>
 
 	<div class="topnav">
 	  <a href="home.html">Home</a>
 	  <a href="Laptops.html">Laptops</a>
 	  <a href="Smartphones.html">Smartphones</a>
 	  <a class="active" href="Watches.html">Watches</a>
+	  <div class="login-container">
+	    
+	      <input type="text" name="username" id="username" placeholder="Username"/>
+	     <input type="password" name="password" id="password" placeholder="Password"/>
+	      <input type="button" value="Login" id="submit" onclick="validate()"/>
+	      <input type="button" value="SignUp" id="sign" onclick="signup()"/>
+
+	    
+  	</div>
 	</div> 
 
+<!-- 	<div class="test-container">
+	    
+	      <input type="text" placeholder="Username " name="b1">
+	      <input type="text" placeholder="Password" name="b2">
+	    
+  	</div> -->
 
+  	<input type="button" value="b" id="b" onclick="test()"/>
+	</div> 
+
+Watches display here
 
 </body>
 </html>

@@ -46,8 +46,10 @@ int main()
 	}
 	pt = omp_get_wtime() - pt;
 
-	printf("time taken for serial compute: %lf \n", st);
-	printf("time taken for parallel compute: %lf \n", pt);
+
+	printf("For a Matrices of Size %d %d\n",m,n);
+	printf("Time taken for serial compute: %lf \n", st);
+	printf("Time taken for parallel compute: %lf \n", pt);
 
 	return 0;
 
