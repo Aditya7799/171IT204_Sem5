@@ -47,12 +47,12 @@ class Perceptron():
             if(Z==Y):
                 if(Z==1.0):
                     tp+=1
-                if(Z==-0.0):
+                if(Z==0.0):
                     tn+=1
             else:
                 if(Y==1.0):
                     fp+=1
-                if(Y==-0.0):
+                if(Y==0.0):
                     fn+=1
         # print(tp,tn,fp,fn)
         try:

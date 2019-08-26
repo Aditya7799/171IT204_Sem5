@@ -1,8 +1,9 @@
 from numpy import exp,array,random,dot,tanh
-
+import numpy
 class Layer():
     def __init__(self,no_of_neurons,number_of_inputs_per_neuron):
         self.weights=random.random((number_of_inputs_per_neuron,no_of_neurons))
+        # self.weights=numpy.zeros([number_of_inputs_per_neuron,no_of_neurons], dtype = float)
         #weights[i][j] = weight of synaptic link form node i in previous layer to node j in current layer
 
 class NeuralNetwork():
@@ -15,8 +16,11 @@ class NeuralNetwork():
     def sig(self,x):
         return 1/(1+exp(-x))
     
-    def th(self,x):
-        return tanh([x])[0]
+    def func(self,x):
+        if(1-x<0.1):
+            return 1.0
+        else:
+            return 0.0
     
     def sig_der(self,x):
         return x*(1-x)
@@ -29,7 +33,8 @@ class NeuralNetwork():
         
     
     def train(self,train,train_outputs,test,test_outputs):
-        A,P,R=0,0,0
+        acc,prec,recall=0,0,0
+        tp,tn,fp,fn=0,0,0,0
         for _ in range(self.iterations):
             hid,out=self.think(train)
 
@@ -48,16 +53,33 @@ class NeuralNetwork():
         #checking test data
         test_length=test.shape[0]
         test_out_length=test_outputs.shape[0]
-        print(test_length,test_out_length)
-        err=0
-        hid,Y=self.think(test)
-        for i in range(test_length):
-            if(abs(test_outputs[i][0]-Y[i][0])>0.1):
-                err+=1
-        # print(err)    
         
-
-        return (1-err/test_length)*100,P,R
+        err=0
+        hid,y=self.think(test)
+        for i in range(test_length):
+            Z=test_outputs[i][0]
+            Y=self.func(y[i][0])
+            # print(Z,Y)
+            if(Z==Y):
+                if(Z==1.0):
+                    tp+=1
+                if(Z==0.0):
+                    tn+=1
+            elif(Z!=Y):
+                err+=1
+                if(Y==1.0):
+                    fp+=1
+                if(Y==0.0):
+                    fn+=1
+        try:
+            acc=(tp+tn)/(tp+tn+fp+fn)
+            prec=(tp)/(tp+fp)
+            recall=(tp)/(tp+fn)
+        except:
+            pass
+        return((1-err/test_length)*100,prec*100,recall*100)   
+        
+      
 
 
 
