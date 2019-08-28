@@ -4,11 +4,12 @@
 <link rel="stylesheet" href="Design.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="js/login.js"></script>
+<script src="js/buttons.js"></script>
 <style>
 .home_content{font-family: "Montserrat", sans-serif;}
 </style>
 
-<body class="home_content" style="max-width:1200px">
+<body class="home_content" style="max-width:1200px" onload="startTime()">
 
 <!-- Sidebar/menu -->
 <nav class="sidebar bar-block" id="mySidebar">
@@ -41,9 +42,12 @@
   <header class="container" style="font-size:24px ">
     <p class="left">Justin Maller</p>
     <p class="right">
+      <i>Date:<strong><span id="txt"></span></strong></i>
       <a href="#"><i class="fa fa-shopping-cart" style="margin-right:16px"></i></a>
       <a href="#"><i class="fa fa-search" style="margin-right:16px"></i></a>
-      <a href="#"><i class="fa fa-sign-in" style="margin-right:16px"></i></a>
+      <a href="signin.html"><i class="fa fa-sign-in" style="margin-right:16px"></i></a>
+      
+
     </p>
   </header>
 
@@ -52,53 +56,77 @@
     <div>
       <div class="container">
         <img src="images/img1.jpg" style="width:100%">
-        <p>PennyWise<br><b>$24.99</b></p>
+        <p class="left">PennyWise<br><b>$24.99</b></p>
+        <br><br><br><br><br>
+        <p class ="left">InStock<br><b>45</b></p>
+        <button type="button" class="button red right" onClick="button1()">Buy Now</button>
+
       </div>
       <div class="container">
         <img src="images/img2.jpg" style="width:100%">
         <p>Joker<br><b>$19.99</b></p>
+        <p class ="left">InStock<br><b>45</b></p>
+        <button type="button" class="button red right" onClick="alert()">Buy Now</button>
       </div>
 
       <div class="container">
         <img src="images/img3.jpg" style="width:100%">
         <p>Joker<br><b>$19.99</b></p>
+
+        <p class ="left">InStock<br><b>45</b></p>
+        <button type="button" class="button red right" onClick="alert()">Buy Now</button>
       </div>
 
       <div class="container">
         <img src="images/img4.jpg" style="width:100%">
         <p>Image 1<br><b>$19.99</b></p>
+
+        <p class ="left">InStock<br><b>45</b></p>
+        <button type="button" class="button red right" onClick="alert()">Buy Now</button>
       </div>
 
       <div class="container">
         <img src="images/img5.jpg" style="width:100%">
         <p>JImage 2<br><b>$19.99</b></p>
+
+        <p class ="left">InStock<br><b>45</b></p>
+        <button type="button" class="button red right" onClick="alert()">Buy Now</button>
       </div>
 
       <div class="container">
         <img src="images/img6.jpg" style="width:100%">
         <p>Image 3<br><b>$19.99</b></p>
+
+        <p class ="left">InStock<br><b>45</b></p>
+        <button type="button" class="button red right" onClick="alert()">Buy Now</button>
       </div>
 
       <div class="container">
         <img src="images/img7.jpg" style="width:100%">
         <p>Wolverine <br><b>$19.99</b></p>
+
+        <p class ="left">InStock<br><b>45</b></p>
+        <button type="button" class="button red right" onClick="alert()">Buy Now</button>
       </div>
 
       <div class="container">
         <img src="images/img9.jpg" style="width:100%">
         <p>Deapool<br><b>$19.99</b></p>
+
+        <p class ="left">InStock<br><b>45</b></p>
+        <button type="button" class="button red right" onClick="alert()">Buy Now</button>
       </div>
 
     </div>
 
     
+<br><br><br><br><br>
 
-->
   <div class="container black ">
     <h1>Subscribe</h1>
     <p>To get special offers and VIP treatment:</p>
     <p><input class="input border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
-    <button type="button" class="button red ">Subscribe</button>
+    <button type="button" class="button red " onClick="alertt()">Subscribe</button>
   </div>
   
 

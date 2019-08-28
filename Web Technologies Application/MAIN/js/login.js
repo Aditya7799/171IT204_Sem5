@@ -1,4 +1,5 @@
-var attempt = 3; // Variable to count number of attempts.
+var attempt = 3;
+ // Variable to count number of attempts.
 // Below function Executes on click of login button.
 function validate(){
 
@@ -22,17 +23,78 @@ return false;
 }
 }
 
+function reset_login(){
+
+attempt=3;
+document.getElementById("username").enabled = true;
+document.getElementById("password").ensabled = true;
+document.getElementById("submit").enabled = true;
+return true;
+}
+
+
+function startTime()
+{
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+// add a zero in front of numbers<10
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+t=setTimeout('startTime()',500);
+}
+function checkTime(i)
+{
+if (i<10)
+{
+i="0" + i;
+}
+return i;
+}
+
+
+function check_valid_name(name)
+{	
+	if(name=="")
+		{alert("Empty Name");
+		return false;}
+	
+	
+	return /\d/.test(name);
+}
+
+function check_valid_email(mail)
+{	
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(mail).toLowerCase());
+}
+
 function send_question()
 {
 
-
+d
 var name = document.getElementById("Name").value;
 var email = document.getElementById("Email").value;
 var subject = document.getElementById("Subject").value;
 var message = document.getElementById("Message").value;
 
-alert(name+email+subject+message);
+if(check_valid_name(name))
+{	
+	alert("Digits in name");
+	return false;
+}
 
+else if(!check_valid_email(email))
+{	alert("Invalid Email");
+	return false;
+}
+else
+{
+	alert("We have recieved your message");
+
+}
 }
 
 
