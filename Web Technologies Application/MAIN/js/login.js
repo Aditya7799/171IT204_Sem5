@@ -1,6 +1,7 @@
 var attempt = 3; // Variable to count number of attempts.
 // Below function Executes on click of login button.
 function validate(){
+
 var username = document.getElementById("username").value;
 var password = document.getElementById("password").value;
 if ( username == "admin" && password == "admin"){
@@ -19,6 +20,19 @@ document.getElementById("submit").disabled = true;
 return false;
 }
 }
+}
+
+function send_question()
+{
+
+
+var name = document.getElementById("Name").value;
+var email = document.getElementById("Email").value;
+var subject = document.getElementById("Subject").value;
+var message = document.getElementById("Message").value;
+
+alert(name+email+subject+message);
+
 }
 
 

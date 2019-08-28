@@ -1,28 +1,138 @@
+<!DOCTYPE html>
 <html>
-<head>
-	<title>Surathkal</title>
-	<link rel="stylesheet" type="text/css" href="css/design_main.css">
-	<script src="js/login.js"></script>
-</head>
-<body class="main">
+<title>STOCKSHUTTER</title>>
+<link rel="stylesheet" href="Design.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="js/login.js"></script>
+<style>
+.home_content{font-family: "Montserrat", sans-serif;}
+</style>
 
-	<div class="topnav">
-	  <a class="active" href="home.html">Home</a>
-	  <a href="Laptops.html">Laptops</a>
-	  <a href="Smartphones.html">Smartphones</a>
-	  <a href="Watches.html">Watches</a>
-	  <form> <input class ="search" type="text" name="search" placeholder="Search..."></form>
-	</div> 
+<body class="home_content" style="max-width:1200px">
 
-	<div class="dropdown">
-  <span>Mouse over me</span>
-  <div class="dropdown-content">
-    <p>Hello World!</p>
+<!-- Sidebar/menu -->
+<nav class="sidebar bar-block" id="mySidebar">
+  <div class="container ">
+    
+    <h3><b>STOCKSHUTTER</b></h3>
   </div>
-</div> 
+  <div style="font-weight:bold">
+    <a href="#" class="bar-item button">Photos</a>
+    <a href="#" class="bar-item button">Illustrations</a>
+    <a class="button block  left-align " id="myBtn">Vectors <i class="fa fa-caret-down"></i></a>
 
-<input type="button" value="SignUp" id="submit" onclick="signup()"/>
+        <div id="demoAcc" class="bar-block " style="padding:12px 24px">
+          <a href="#" class="bar-item button light-grey"><i class="fa fa-caret-right" style="margin-right:16px"></i>Justin Maller</a>
+          <a href="#" class="bar-item button">Graphic</a>
+          <a href="#" class="bar-item button">Video Games</a>
+          <a href="#" class="bar-item button">Sci-Fi</a>
+        </div>
 
+    <a href="#" class="bar-item button">Icons</a>
+    <a href="#" class="bar-item button">Footage</a>
+  </div>
+</nav>
+
+
+<!-- !PAGE CONTENT! -->
+<div class="main" style="margin-left:250px">
+
+  
+  <header class="container" style="font-size:24px ">
+    <p class="left">Justin Maller</p>
+    <p class="right">
+      <a href="#"><i class="fa fa-shopping-cart" style="margin-right:16px"></i></a>
+      <a href="#"><i class="fa fa-search" style="margin-right:16px"></i></a>
+      <a href="#"><i class="fa fa-sign-in" style="margin-right:16px"></i></a>
+    </p>
+  </header>
+
+
+  <div >
+    <div>
+      <div class="container">
+        <img src="images/img1.jpg" style="width:100%">
+        <p>PennyWise<br><b>$24.99</b></p>
+      </div>
+      <div class="container">
+        <img src="images/img2.jpg" style="width:100%">
+        <p>Joker<br><b>$19.99</b></p>
+      </div>
+
+      <div class="container">
+        <img src="images/img3.jpg" style="width:100%">
+        <p>Joker<br><b>$19.99</b></p>
+      </div>
+
+      <div class="container">
+        <img src="images/img4.jpg" style="width:100%">
+        <p>Image 1<br><b>$19.99</b></p>
+      </div>
+
+      <div class="container">
+        <img src="images/img5.jpg" style="width:100%">
+        <p>JImage 2<br><b>$19.99</b></p>
+      </div>
+
+      <div class="container">
+        <img src="images/img6.jpg" style="width:100%">
+        <p>Image 3<br><b>$19.99</b></p>
+      </div>
+
+      <div class="container">
+        <img src="images/img7.jpg" style="width:100%">
+        <p>Wolverine <br><b>$19.99</b></p>
+      </div>
+
+      <div class="container">
+        <img src="images/img9.jpg" style="width:100%">
+        <p>Deapool<br><b>$19.99</b></p>
+      </div>
+
+    </div>
+
+    
+
+->
+  <div class="container black ">
+    <h1>Subscribe</h1>
+    <p>To get special offers and VIP treatment:</p>
+    <p><input class="input border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
+    <button type="button" class="button red ">Subscribe</button>
+  </div>
+  
+
+  <footer class="light-grey " id="footer">
+    <div >
+      <div>
+        <h4>Contact</h4>
+        <p>Questions? Go ahead.</p>
+        <form >
+          <p><input class="input border" type="text" placeholder="Name" id="Name"  required></p>
+          <p><input class="input border" type="text" placeholder="Email" id="Email" required></p>
+          <p><input class="input border" type="text" placeholder="Subject" id="Subject" required></p>
+          <p><input class="input border" type="text" placeholder="Message" id="Message" required></p>
+          <button type="submit" class="button block black" onClick="send_question()">Send</button>
+        </form>
+      </div>
+
+      <div >
+        <h4>About</h4>
+        <p><a href="#">About us</a></p>
+        <p><a href="#">Support</a></p>
+        <p><a href="#">Shipment</a></p>
+        <p><a href="#">Payment</a></p>
+        <p><a href="#">Gift card</a></p>
+        <p><a href="#">Refund</a></p>
+        <p><a href="#">Help</a></p>
+      </div>
+
+      
+    </div>
+  </footer>
+
+  
+  <!-- End page content -->
 
 
 </body>
