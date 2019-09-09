@@ -2,6 +2,7 @@ import csv
 import math
 
 def train(Rows,attributes,test_set):
+	print(Rows)
 	numberyes=0
 	numberno=0
 	for i in range(len(Rows)):
