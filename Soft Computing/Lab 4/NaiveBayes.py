@@ -80,32 +80,9 @@ def train(train, test, no_of_attr):
             recall=(tp)/(tp+fn)
     except:
         pass
-    return [acc*100,prec*100,recall*100]
+    return [(1-err/len(test))*100,prec*100,recall*100]
 
 def preprocess(C,path):
-    # f=open(path,"r")
-    # data=list(csv.reader(f))
-    # data=data[1:]
-    # shuffle(data)
-    # no_of_attr=len(data[0])-1
-    
-    
-    # for row in data:
-    #     for c in range(no_of_attr):
-
-    #         row[c]=int(row[c])
-    #     if(row[-1]=="Iris-versicolor" or row[-1]=="Yes"):
-    #         row[-1]=1.0
-    #     elif(row[-1]=="Iris-setosa" or row[-1]=="No"):
-    #         row[-1]=0.0
-    
-    # # output=[[i[-1]] for i in data]
-    # # data=[np.array(i[0:len(i)-1]) for i in data]
-    # # return (no_of_attr,np.array(data),np.array(output))
-    # return (no_of_attr,data,data)
-
-
-
     lines = csv.reader(open(path, 'r'))
     dataset = list(lines)
     dataset=dataset[1:]
@@ -155,7 +132,7 @@ def main(Chromosome,path="Datasets/SPECT.csv",cross_over=0.25,mutation=0.10):
         # train_output,test_output=fold(output,i,num_folds)
         a,p,r=0,0,0
 
-
+        # print(training)
 
 
         l=train(training, testing,no_of_attr)
@@ -167,10 +144,10 @@ def main(Chromosome,path="Datasets/SPECT.csv",cross_over=0.25,mutation=0.10):
         Recall.append(r)
     # print(Accuracy)
     Average=[sum(Accuracy)/len(Accuracy),sum(Precision)/len(Precision),sum(Recall)/len(Recall)]
-    print("Net Accuracy:",Average[0])
-    print("Net Precision:",Average[1])
-    print("Net Recall:",Average[2])
-    return Average
+    # print("Net Accuracy:",Average[0])
+    # print("Net Precision:",Average[1])
+    # print("Net Recall:",Average[2])
+    return Average[0]
 
 if(__name__ =="__main__"):
-    main("Datasets/IRIS.csv",)
+    main([1]*22,"Datasets/IRIS.csv",)

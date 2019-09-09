@@ -19,7 +19,7 @@ def initializeChromosome():
 def calculateFitness(C, algorithm):
 	F=[]
 	for i in range(population_size):
-		F.append(algorithm.main(C[i])[0])
+		F.append(algorithm.main(C[i]))
 	#print('Fitness=',F,' len=',len(F))	
 				
 	return F
