@@ -101,23 +101,23 @@ def Mutation(Chromosome):
 	#print ('Chromosome=',Chromosome)
 	return Chromosome
 	
-def main(CrsRate,MutnRate):
-    global CrossoverRate,MutationRate
-    CrossoverRate=CrsRate
-    MutationRate=MutnRate	
-    C=initializeChromosome()
-    Acc=[]
-    for i in range(20):
-        F=calculateFitness(C, NaiveBayes)
-        print('Best Fitness=',max(F), ' Chromosome selected=',C[F.index(max(F))])
-        Acc.append(max(F))
-        selected=RouletteWheel(F)
-        UpdatedC=updatePopulation(selected, C)
-        AfterCrossover=CrossOver(UpdatedC)
-        Mutated=Mutation(AfterCrossover)
-        C=Mutated
-    return Acc
+def main():	
+	C=initializeChromosome()
+	f=open("Outputs/output.txt","w")
+	fit=[]
+	for i in range(20):
+		F=calculateFitness(C, NaiveBayes)
+		print('Average Fitness=',sum(F)/len(F))
 
+		f.write(str(sum(F)/len(F))+" ")
+		selected=RouletteWheel(F)
+		UpdatedC=updatePopulation(selected, C)
+		AfterCrossover=CrossOver(UpdatedC)
+		Mutated=Mutation(AfterCrossover)
+		C=Mutated
+
+
+main()	
 
 
 

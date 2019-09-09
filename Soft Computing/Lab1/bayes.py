@@ -2,7 +2,7 @@ import csv
 import math
 
 def train(Rows,attributes,test_set):
-	print(Rows)
+	# print(Rows)
 	numberyes=0
 	numberno=0
 	for i in range(len(Rows)):
@@ -53,8 +53,8 @@ def train(Rows,attributes,test_set):
 			elif test_set[j][i]=='1':
 				yes_p*=p1yes[i-1]
 				no_p*=p1no[i-1]
-				#print(yes_p)
-				#print(no_p)
+		print(yes_p)
+		print(no_p)
 
 		if yes_p>no_p:
 			max_prob='Yes'
@@ -112,7 +112,7 @@ def main():
 	#print(len(rows),len(attributes))
 	k=10
 	sum=0;
-	print(attributes)
+	# print(attributes)
 	for i in range(1,k+1):
 		accuracy=[]
 		after_fold=fold(rows,i,k)
