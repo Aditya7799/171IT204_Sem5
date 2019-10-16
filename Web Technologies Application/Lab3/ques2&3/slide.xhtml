@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	
+<title>Javascript SlideShow</title>
+	<link rel="stylesheet" href="slide.css" />
+	
+<script type="text/javascript">
+		function start1(){
+			var cont=document.getElementsByClassName("container");
+			cont[0].style.display="block";
+			return true;
+			}
+			var index=1;
+			showSlides(index);
+			function plusSlides(n) {
+			showSlides(index+=n);
+			}
+			function showSlides(n){
+			var i;
+			var photos=document.getElementsByClassName("slides");
+			if(n&gt;photos.length) 
+			{index=1;}
+			if(n&lt;1)
+			{index=photos.length;}
+			for (i = 0; i &lt; photos.length; i++) {
+			      photos[i].style.display = "none";
+			  }
+			  photos[index-1].style.display = "block";
+			}
+		function validateForm() {
+			var name = document.forms["myForm"]["name"].value;
+			var Gender= document.forms["myForm"]["gender"].value;
+			var address = document.forms["myForm"]["addr"].value;
+			var comment = document.forms["myForm"]["cmt"].value;
+			if (name=="")
+				{alert("Enter Name");return false;}
+			if (address=="")
+				{alert("Enter Address");return false;}
+			if (comment=="")
+				{alert("Enter Comment");return false;}
+			if(Gender==null)
+				{alert("Invalid Gender");	return false;}
+			
+			var list=[name,Gender,address,comment];
+			return list;
+	}
+	function disp()
+	{
+		var list=validateForm();
+		document.getElementById("data").innerHTML="Hi "+list[0]+" of gender "+list[1]+" living at "+list[2]+"\n Comment - "+list[3];
+	}
+	</script></head>
+<body>
+	<button class="start" onclick="start1()">slideshow</button>
+	
+<div class="container">
+		<img class="slides" src="images/img1.jpg" alt="" />
+		<img class="slides" src="images/img2.jpg" alt="" />
+		<img class="slides" src="images/img3.jpg" alt="" />
+		<img class="slides" src="images/img4.jpg" alt="" />
+		<button class="btn" id="btn1" onclick="plusSlides(-1)">❮</button>
+		<button class="btn" id="btn2" onclick="plusSlides(1)">❯</button>
+	</div>
+	
+<div class="row">
+		<!-- <div class="column left"> -->
+			<!-- <p>qwerqwerqwerwqer</p> -->
+		<!-- </div> -->
+		<dir class="column middle">
+			
+<p />
+<h2 align="center">FEEDBACK FORM</h2>
+				<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+					
+<p>Enter Your Name</p>
+					<input type="text" name="name" />
+					<br />
+					
+<p>Enter Your Gender</p>
+					<input type="radio" name="gender" value="male" /> Male<br />
+  					<input type="radio" name="gender" value="female" /> Female<br />
+  					
+					<br />
+					
+<p>Enter Your Address</p>
+					<input type="text" name="addr" />
+					<br />
+					
+<p>Enter Your Comment</p>
+					<input type="text" name="cmt" />
+					<br />
+					<!-- <input type="submit" value="Login" /> -->
+				</form>
+				<button onclick="return disp()">Submit</button>
+			
+<p />
+		</dir>
+		
+		<!-- <div class="column right"> -->
+		
+<div class="cnt" align="center">
+		
+<p id="data">
+			
+			Your Response
+			
+		</p>	
+		</div>
+		<!-- </div> -->
+	</div>
+	
+</body></html>
